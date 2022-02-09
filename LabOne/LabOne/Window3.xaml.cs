@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Linq;
+using System.IO;
 
 namespace LabOne
 {
@@ -16,17 +17,39 @@ namespace LabOne
         static int player = 1, winO = 0, winX = 0;
 
         public Button[,] ButtonArray = new Button[5, 5];
+
         public Window3()
         {
             InitializeComponent();
             foreach (Button b in GameTable.Children.OfType<Button>())
             { ButtonArray[int.Parse(b.Tag.ToString().Substring(0, 1)), int.Parse(b.Tag.ToString().Substring(1, 1))] = b; }
-
-
+            Stats.Content = "Wins:\nO - " + winO + "\nX - " + winX;
+            if (File.Exists("StatsTTT.txt") == false)
+                File.WriteAllText("StatsTTT.txt", Stats.Content.ToString());
         }
 
         private void _3ToMain_Click(object sender, RoutedEventArgs e)
         {
+            string[] oldtxt = File.ReadAllLines("StatsTTT.txt"); int i = 0, line = 1;
+            while (line < 3)
+            {
+                char buffer = ' ';
+                if (int.TryParse(oldtxt[line].Substring(i, 1), out int num) == true)
+                {
+                    if (line == 1)
+                    { buffer = (char)(num + 48); num += winO; i = 0; }
+                    else
+                    { buffer = (char)(num + 48); num += winX; }
+                    oldtxt[line] = oldtxt[line].Replace(buffer, (char)(num + 48));
+                    line++;
+                }
+                
+                i++; 
+            }
+            File.WriteAllLines("StatsTTT.txt", oldtxt);
+
+            ResetTable();
+            winX = 0; winO = 0;
             MainWindow nwc = new MainWindow();
             Hide();
             nwc.Show();
@@ -55,95 +78,8 @@ namespace LabOne
         }
 
 
+        //AI
 
-        /*ComputerTurn(int.Parse(btn.Tag.ToString().Substring(0, 1)), int.Parse(btn.Tag.ToString().Substring(1, 1)));*/
-
-        /* private void ComputerTurn(int PlayerX, int PlayerY)
-         {
-             Dictionary<string, int> Counters = new Dictionary<string, int>() { { "Row", 1 }, { "Col", 1 }, { "DMain", 1 }, { "DReverse", 1 } };
-             int Max = int.MinValue; string counter = "";
-             for (int i = 0; i < 5; i++)
-                 for (int j = 0; j < 5; j++)
-                 {
-                     if ((i + j) == (PlayerX + PlayerY) && ButtonArray[i, j].Content == "O")
-                     { Counters["DReverse"]++; continue; }
-                     if ((i - j) == (PlayerX - PlayerY) && ButtonArray[i, j].Content == "O")
-                     { Counters["DMain"]++; continue; }
-                     if (i == PlayerX && ButtonArray[i, j].Content == "O")
-                     { Counters["Row"]++; continue; }
-                     if (j == PlayerY && ButtonArray[i, j].Content == "O")
-                     { Counters["Col"]++; continue; }
-                 }
-             foreach (KeyValuePair<string, int> a in Counters)
-             {
-                 if (a.Value > Max)
-                     counter = a.Key;
-                 else if (a.Value == Max && rnd.NextDouble() > 0.5)
-                     counter = a.Key;
-             }
-             CompChoise(PlayerX, PlayerY, counter);
-             Counters.Clear();
-         }           
-
-         private void CompChoise(int PlayerX, int PlayerY, string choise)
-         {
-
-             switch (choise)
-             {
-                 case "Row":
-                     {
-                         while (true)
-                         {
-                             int j = 0;
-                             if (ButtonArray[PlayerX, j % 5].Content == null && rnd.NextDouble() > 0.6)
-                             { ButtonArray[PlayerX, j % 5].Content = "X"; break; }
-                             j++;
-                         }
-                         break;
-                     }
-                 case "Col":
-                     {
-                         while (true)
-                         {
-                             int i = 0;
-                             if (ButtonArray[i % 5, PlayerY].Content == null && rnd.NextDouble() > 0.6)
-                             { ButtonArray[i % 5, PlayerY].Content = "X"; break; }
-                             i++;
-                         }
-                         break;
-                     }
-                 case "DReverse":
-                     {
-                         for (int i = 0; i < 25; i++)
-                         {
-                             for (int j = 0; j < 25; j++)
-                             {
-                                 if (((i%5) + (j%5)) == (PlayerX + PlayerY))
-                                     if (ButtonArray[i%5, j%5].Content == null && rnd.NextDouble() > 0.6)
-                                     { ButtonArray[i%5, j%5].Content = "X"; break; }
-
-                             }
-                             break;
-                         }
-                         break;
-                     }
-                 case "DMain":
-                     {
-                         for (int i = 0; i < 25; i++)
-                         {
-                             for (int j = 0; j < 25; j++)
-                             {
-                                 if (Math.Abs((i%5) - (j%5)) == Math.Abs(PlayerX - PlayerY))
-                                     if (ButtonArray[i%5, j%5].Content == null && rnd.NextDouble() > 0.6)
-                                     { ButtonArray[i%5, j%5].Content = "X"; break; }
-                             }
-                             break;
-                         }
-                         break;
-                     }
-             }
-
-         }*/
 
         private void CheckWinLose(string sign, int X, int Y)
         {
@@ -182,7 +118,7 @@ namespace LabOne
 
             }
 
-            if (Ver == 5 || Hor == 5 || DigMain == 5 || DigReverse == 5)
+            else if (Ver == 5 || Hor == 5 || DigMain == 5 || DigReverse == 5)
             {
                 if (sign == "O")
                     winO++;
@@ -197,14 +133,19 @@ namespace LabOne
                     Hide();
                     nwc.Show();
                 }
-                Stats.Content = "Wins:\nO - " + winO + "\nX - " + winX;
                 ResetTable();
             }
 
         }
 
+        private void Stats_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(File.ReadAllText("StatsTTT.txt"), "Stats", MessageBoxButton.OK);
+        }
+
         private void ResetTable()
         {
+            Stats.Content = "Wins:\nO - " + winO + "\nX - " + winX;
             foreach (Button btn in GameTable.Children.OfType<Button>())
             {
                 btn.Content = null;
@@ -215,6 +156,7 @@ namespace LabOne
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Game reset!", "Reset", MessageBoxButton.OK);
+            winX = 0; winO = 0;
             ResetTable();
         }
     }

@@ -51,9 +51,10 @@
 
 
         <Grid x:Name="SystemButton" Grid.Row="5" Grid.ColumnSpan="5">
-            <Button x:Name="Reset" Grid.Column="0" FontSize="36" FontFamily="SimSun-ExtB" FontWeight="Bold" FontStyle="Normal" Margin="0,146,324,0" Content="Reset" Click="Reset_Click"/>
-            <Button x:Name="_3ToMain" FontSize="36" FontFamily="SimSun-ExtB" FontWeight="Bold" FontStyle="Normal" Margin="322,146,0,0" Content="Main menu" Click="_3ToMain_Click"/>
-            <Label x:Name="Stats" Content="Wins:" HorizontalAlignment="Left" Margin="220,10,0,0" VerticalAlignment="Top" FontFamily="SimSun-ExtB" FontSize="36" Width="310"/>
+            <Button x:Name="Reset" Grid.Column="0" FontSize="36" FontFamily="SimSun-ExtB" FontWeight="Bold" FontStyle="Normal" Margin="0,146,375,0" Content="Reset" Click="Reset_Click"/>
+            <Button x:Name="_3ToMain" FontSize="30" FontFamily="SimSun-ExtB" FontWeight="Bold" FontStyle="Normal" Margin="375,146,0,0" Content="Main menu" Click="_3ToMain_Click"/>
+            <Label x:Name="Stats" Content="" HorizontalAlignment="Left" Margin="220,10,0,0" VerticalAlignment="Top" FontFamily="SimSun-ExtB" FontSize="36" Width="310"/>
+            <Button x:Name="StatsButton" Grid.Column="0" FontSize="36" FontFamily="SimSun-ExtB" FontWeight="Bold" FontStyle="Normal" Margin="188,146,188,0" Content="Wins" Click="Stats_Click"/>
         </Grid>
     </Grid>
 </Window>
