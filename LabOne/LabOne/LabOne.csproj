@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Books-icon.png" />
+    <None Remove="Calculator-icon.png" />
+    <None Remove="clipart4410466.png" />
+    <None Remove="free-icon-danger-4666195.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Books-icon.png" />
+    <Resource Include="Calculator-icon.png" />
+    <Resource Include="clipart4410466.png" />
+    <Resource Include="free-icon-danger-4666195.png" />
+  </ItemGroup>
+
+</Project>

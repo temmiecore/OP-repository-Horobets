@@ -1,0 +1,58 @@
+﻿<Window x:Class="LabOne.Window4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabOne"
+        mc:Ignorable="d"
+        Title="Calculator" Height="550" Width="400" ResizeMode="NoResize" Icon="/Calculator-icon.png" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15,25,15,25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="ResultBox" TextWrapping="Wrap" Grid.Column="0" Grid.ColumnSpan="4" FontSize="72" FontFamily="SimSun-ExtB" VerticalAlignment="Center" TextAlignment="Right" Height="91" Background="White" Text="0"/>
+        <Button Grid.Row="1" Grid.Column="0" Content="AC" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Click="AC_Click"></Button>
+        <Button Grid.Row="1" Grid.Column="1" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="+/-" Click="Button_Sign"></Button>
+        <Button Grid.Row="1" Grid.Column="2" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="%" Click="Button_Op" Tag="Modulo"></Button>
+        <Button Grid.Row="1" Grid.Column="3" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="&#247;" Click="Button_Op" Tag="Divide"></Button>
+        <Button Grid.Row="2" Grid.Column="0" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="7" Click="Button_Num"></Button>
+        <Button Grid.Row="2" Grid.Column="1" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="8" Click="Button_Num"></Button>
+        <Button Grid.Row="2" Grid.Column="2" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="9" Click="Button_Num"></Button>
+        <Button Grid.Row="2" Grid.Column="3" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="*" Click="Button_Op" Tag="Multiply"></Button>
+        <Button Grid.Row="3" Grid.Column="0" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="4" Click="Button_Num"></Button>
+        <Button Grid.Row="3" Grid.Column="1" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="5" Click="Button_Num"></Button>
+        <Button Grid.Row="3" Grid.Column="2" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="6" Click="Button_Num"></Button>
+        <Button Grid.Row="3" Grid.Column="3" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="-" Click="Button_Op" Tag="Substract"></Button>
+        <Button Grid.Row="4" Grid.Column="0" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="1" Click="Button_Num"></Button>
+        <Button Grid.Row="4" Grid.Column="1" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="2" Click="Button_Num"></Button>
+        <Button Grid.Row="4" Grid.Column="2" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="3" Click="Button_Num"></Button>
+        <Button Grid.Row="4" Grid.Column="3" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="+" Click="Button_Op" Tag="Add"></Button>
+        <Button Grid.Row="5" Grid.Column="0" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="0" Click="Button_Num"></Button>
+        <Button Grid.Row="5" Grid.Column="1" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold" Content="," Click="Button_Float"></Button>
+        <Button Grid.Row="5" Grid.Column="2" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold"  Content="=" Click="Result_Click" ></Button>
+        <Button Grid.Row="5" Grid.Column="3" FontFamily="SimSun-ExtB" FontSize="48" FontWeight="Bold"  Content="&#8730;" Click="Button_Sqrt" ></Button>
+        <Button x:Name="_4ToMain" Content="Main Menu" Grid.Row="6" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="64" Margin="70,27,0,0" VerticalAlignment="Top" Width="208"  FontFamily="SimSun-ExtB" FontSize="36" FontWeight="Bold" Click="_4ToMain_Click" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.035"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBlock x:Name="Operand" TextWrapping="Wrap" Grid.Column="0" FontSize="22" FontFamily="SimSun-ExtB" VerticalAlignment="Top" TextAlignment="Left" Height="26" Margin="10,0,54,0"/>
+    </Grid>
+</Window>

@@ -1,0 +1,59 @@
+﻿<Window x:Class="LabOne.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabOne"
+        mc:Ignorable="d"
+        Title="Tic-tac-Toe" Height="800" Width="600" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/clipart4410466.png">
+    <Grid x:Name="GameTable" Margin="30,20,30,32">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"></RowDefinition>
+            <RowDefinition Height="0.25*"></RowDefinition>
+            <RowDefinition Height="0.25*"></RowDefinition>
+            <RowDefinition Height="0.25*"></RowDefinition>
+            <RowDefinition Height="0.25*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.25*"></ColumnDefinition>
+            <ColumnDefinition Width="0.25*"></ColumnDefinition>
+            <ColumnDefinition Width="0.25*"></ColumnDefinition>
+            <ColumnDefinition Width="0.25*"></ColumnDefinition>
+            <ColumnDefinition Width="0.25*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Grid.Row="0" FontSize="72" Click="Button_Click" FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="00"/>
+        <Button Grid.Column="1" Grid.Row="0" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="10"/>
+        <Button Grid.Column="2" Grid.Row="0" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="20"/>
+        <Button Grid.Column="3" Grid.Row="0" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="30"/>
+        <Button Grid.Column="4" Grid.Row="0" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="40"/>
+        <Button Grid.Column="0" Grid.Row="1" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="01"/>
+        <Button Grid.Column="1" Grid.Row="1" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="11"/>
+        <Button Grid.Column="2" Grid.Row="1" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="21"/>
+        <Button Grid.Column="3" Grid.Row="1" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="31"/>
+        <Button Grid.Column="4" Grid.Row="1" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="41"/>
+        <Button Grid.Column="0" Grid.Row="2" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="02"/>
+        <Button Grid.Column="1" Grid.Row="2" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="12"/>
+        <Button Grid.Column="2" Grid.Row="2" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="22"/>
+        <Button Grid.Column="3" Grid.Row="2" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="32"/>
+        <Button Grid.Column="4" Grid.Row="2" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="42"/>
+        <Button Grid.Column="0" Grid.Row="3" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="03"/>
+        <Button Grid.Column="1" Grid.Row="3" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="13"/>
+        <Button Grid.Column="2" Grid.Row="3" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="23"/>
+        <Button Grid.Column="3" Grid.Row="3" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="33"/>
+        <Button Grid.Column="4" Grid.Row="3" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="43"/>
+        <Button Grid.Column="0" Grid.Row="4" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="04"/>
+        <Button Grid.Column="1" Grid.Row="4" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="14"/>
+        <Button Grid.Column="2" Grid.Row="4" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="24"/>
+        <Button Grid.Column="3" Grid.Row="4" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="34"/>
+        <Button Grid.Column="4" Grid.Row="4" FontSize="72" Click="Button_Click"  FontFamily="Comic Sans MS" FontWeight="Bold" FontStyle="Normal" Tag="44"/>
+
+
+        <Grid x:Name="SystemButton" Grid.Row="5" Grid.ColumnSpan="5">
+            <Button x:Name="Reset" Grid.Column="0" FontSize="36" FontFamily="SimSun-ExtB" FontWeight="Bold" FontStyle="Normal" Margin="0,146,324,0" Content="Reset" Click="Reset_Click"/>
+            <Button x:Name="_3ToMain" FontSize="36" FontFamily="SimSun-ExtB" FontWeight="Bold" FontStyle="Normal" Margin="322,146,0,0" Content="Main menu" Click="_3ToMain_Click"/>
+            <Label x:Name="Stats" Content="Wins:" HorizontalAlignment="Left" Margin="220,10,0,0" VerticalAlignment="Top" FontFamily="SimSun-ExtB" FontSize="36" Width="310"/>
+        </Grid>
+    </Grid>
+</Window>
