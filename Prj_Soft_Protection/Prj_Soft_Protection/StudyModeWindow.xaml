@@ -22,12 +22,11 @@ FontSize="18"/>
 Margin="171,44,0,0" TextWrapping="Wrap"
 VerticalAlignment="Top" Height="22" Width="125"
 TextAlignment="Justify" Foreground="#FF764F22"
-Text="ьфлуысутыу"/>
+Text="apgnemov"/>
         <TextBox x:Name="InputField" HorizontalAlignment="Left"
 Height="28" Margin="8,141,0,0" TextWrapping="Wrap"
 VerticalAlignment="Top" Width="212" Background="#FFDBE6F9"
-HorizontalContentAlignment="Stretch"
-PreviewKeyUp="TextBox_PreviewKeyUp"/>
+HorizontalContentAlignment="Stretch" KeyDown="InputField_KeyDown"/>
 
         <Label Content="Поле для введення:" HorizontalAlignment="Left"
 Margin="8,108,0,0" VerticalAlignment="Top" Height="28"
@@ -47,7 +46,7 @@ Margin="9,174,0,0" VerticalAlignment="Top" Height="28"
 Width="191" HorizontalContentAlignment="Left" FontSize="18"/>
         <ComboBox x:Name="CountProtection" HorizontalAlignment="Left"
 Margin="205,178,0,0" VerticalAlignment="Top" Width="55"
-SelectedIndex="-1" SelectionChanged="CountProtection_SelectionChanged">
+SelectedIndex="-1">
 
             <ComboBoxItem Content="3"/>
             <ComboBoxItem Content="4"/>
