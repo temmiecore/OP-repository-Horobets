@@ -20,12 +20,17 @@ namespace Prj_Soft_Protection
     /// <summary>
     /// Interaction logic for StudyModeWindow.xaml
     /// </summary>
+    /// 
+
+
+
     public partial class StudyModeWindow : Window
     {
         static int TriesNum = 1, KeysCount = 0, TriesTotal = 0;
         static string CodeText = "";
         static Stopwatch stopWatch = new Stopwatch();
         static double[,] Intervals;
+        static double[,] MCD;
 
         public StudyModeWindow()
         {
@@ -64,7 +69,10 @@ namespace Prj_Soft_Protection
                         MessageBox.Show("Successfull try" + "\nKeys: " + KeysCount + "\nTries: " + TriesNum, "Success", MessageBoxButton.OK);
                         InputField.Text = "";
                         e.Handled = true;
+                        DataCalc(TriesNum - 1);
                         KeysCount = 0;
+
+                        TriesNum++;
                     }
                     else
                     {
@@ -81,7 +89,6 @@ namespace Prj_Soft_Protection
                         InputField.Text = "";
                         InputField.IsEnabled = false;
                     }
-                    TriesNum++;
                 }
                 else
                 {
@@ -100,7 +107,7 @@ namespace Prj_Soft_Protection
             {
                 TriesTotal = int.Parse(e.Key.ToString().Substring(1, 1));
                 Intervals = new double[TriesTotal, CodeText.Length];
-                MessageBox.Show(TriesTotal + ":" + CodeText);
+                MCD = new double[2, TriesTotal];
             }
             else
                 ErrorMsg();
@@ -116,18 +123,30 @@ namespace Prj_Soft_Protection
 
             using (StreamWriter stream = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/IntervalsTime.txt"))
             {
-               
-                for (int i = 0; i < Intervals.GetLength(0); i++)
-                {
-                    for (int j = 1; j < Intervals.GetLength(1); j++)
-                        stream.Write(Intervals[i, j] + " ");
-                    stream.WriteLine();
+                stream.WriteLine(CodeText);
+                for (int i = 0; i < MCD.GetLength(1); i++)
+                { 
+                    if (MCD[0, i] != 0 && MCD[1, i] != 0)
+                       stream.WriteLine(MCD[0, i] + "/" + MCD[1, i]); 
                 }
             }
-            KeysCount = 0; TriesNum = 0; InputField.Text = "";
+            KeysCount = 0; TriesNum = 0; InputField.Text = ""; stopWatch.Stop();
             MainWindow nwc = new MainWindow();
             Hide();
             nwc.Show();
+        }
+
+        private void DataCalc(int tries)
+        {
+            double MC = 0, Dtry = 0;
+            for (int j = 1; j < Intervals.GetLength(1); j++)
+                MC += Intervals[tries, j];
+            MC /= Intervals.GetLength(1);
+            MCD[0, tries] = MC;
+            for (int i = 1; i < Intervals.GetLength(1); i++)
+                Dtry += (Intervals[tries, i] - MC) * (Intervals[tries, i] - MC);
+            Dtry /= Intervals.GetLength(1) - 1;
+            MCD[1, tries] = Dtry;
         }
 
         private int IntervalCheck(int tries)
@@ -135,22 +154,21 @@ namespace Prj_Soft_Protection
             int check = 1; double M = 0, D = 0, Dsqrt = 0, Tp;
             for (int j = 1; j < Intervals.GetLength(1); j++)
             {
-                double y = Intervals[tries, j]; 
-                for (int k = 1; k < Intervals.GetLength(1); k++) 
+                double y = Intervals[tries, j];
+                for (int k = 1; k < Intervals.GetLength(1); k++)
                 {
                     if (k == j)
                         continue;
                     else
-                        M += Intervals[tries, k]; 
+                        M += Intervals[tries, k];
                 }
                 M /= Intervals.GetLength(1) - 1;
-                D = getD(y, tries, M); 
-                Dsqrt = Math.Sqrt(D); 
+                D = getD(y, tries, M);
+                Dsqrt = Math.Sqrt(D);
                 Tp = Math.Abs((y - M) / Dsqrt);
-                if (Tp > 2.306) //df = 8, alpha = 0.05
+                if (Tp > 2.364) //df = 7, alpha = 0.05, change for switch with 5-6 different choises
                 { check *= 0; }
-                MessageBox.Show(Tp.ToString());
-            } 
+            }
             return check;
         }
         private double getD(double y, int j, double M)
@@ -159,7 +177,7 @@ namespace Prj_Soft_Protection
             for (int i = 0; i < Intervals.GetLength(1); i++)
             {
                 if (Intervals[j, i] == y)
-                    continue; 
+                    continue;
                 else
                     D += (Intervals[j, i] - M) * (Intervals[j, i] - M);
             }

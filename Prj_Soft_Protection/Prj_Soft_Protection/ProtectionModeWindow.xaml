@@ -13,108 +13,89 @@ FontFamily="Courier New" FontWeight="Bold"
 WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
 
     <Grid Background="#FFBBE5B0">
-        <Label Content="РЕЖИМ ПЕРЕВІРКИ" HorizontalAlignment="Left"
-Margin="8,10,0,0" VerticalAlignment="Top" Height="28"
-Width="610" HorizontalContentAlignment="Center"
+        <Label Content="РЕЖИМ ПЕРЕВІРКИ" HorizontalAlignment="Center"
+Margin="0,6,0,0" VerticalAlignment="Top" Height="28"
+Width="710" HorizontalContentAlignment="Center"
 FontSize="18"/>
 
         <TextBlock x:Name="VerifField" HorizontalAlignment="Left"
 
-Margin="168,44,0,0" TextWrapping="Wrap"
-VerticalAlignment="Top" Height="24" Width="151"
+Margin="168,34,0,0" TextWrapping="Wrap"
+VerticalAlignment="Top" Height="24" Width="176"
 TextAlignment="Justify" Foreground="Red" Text=""/>
         <TextBox x:Name="InputField" HorizontalAlignment="Left"
-Height="26" Margin="7,137,0,0" TextWrapping="Wrap"
+Height="26" Margin="10,143,0,0" TextWrapping="Wrap"
 VerticalAlignment="Top" Width="199" Background="#FFE4DEE0"
-HorizontalContentAlignment="Stretch"
-PreviewKeyUp="InputField_PreviewKeyUp"/>
+HorizontalContentAlignment="Stretch" KeyDown="InputField_KeyDown"/>
         <Label Content="Кількість введених символів:"
-HorizontalAlignment="Left" Margin="7,104,0,0"
+HorizontalAlignment="Left" Margin="8,116,0,0"
 VerticalAlignment="Top" Height="28" Width="311"
 HorizontalContentAlignment="Left" FontSize="18"/>
         <Button x:Name="CloseStudyMode" Content="Вийти з режиму для
-перевірки" HorizontalAlignment="Left" Margin="7,168,0,0"
+перевірки" HorizontalAlignment="Left" Margin="10,174,0,0"
 VerticalAlignment="Top" Width="311" Height="35"
 Click="CloseStudyMode_Click"/>
         <Label x:Name="SymbolCount" Content="0"
 
-HorizontalAlignment="Left" Margin="328,104,0,0"
+HorizontalAlignment="Left" Margin="329,116,0,0"
 VerticalAlignment="Top" Height="28" Width="33" FontSize="18"/>
-        <ComboBox x:Name="CountProtection" HorizontalAlignment="Left"
-Margin="151,76,0,0" VerticalAlignment="Top" Width="49"
-SelectedIndex="0">
-
-            <ComboBoxItem Content="3"/>
-            <ComboBoxItem Content="4"/>
-            <ComboBoxItem Content="5"/>
-            <ComboBoxItem Content="6"/>
-            <ComboBoxItem Content="7"/>
-            <ComboBoxItem/>
-        </ComboBox>
         <Label Content="К-сть спроб:" HorizontalAlignment="Left"
-Margin="8,72,0,0" VerticalAlignment="Top" Height="28"
+Margin="9,84,0,0" VerticalAlignment="Top" Height="28"
 Width="142" HorizontalContentAlignment="Left" FontSize="18"/>
         <Label Content="Кодове слово:" HorizontalAlignment="Left"
-Margin="8,38,0,0" VerticalAlignment="Top" Height="28"
+Margin="8,32,0,0" VerticalAlignment="Top" Height="28"
 Width="155" HorizontalContentAlignment="Left" FontSize="18"/>
         <Label Content="Статистичний аналіз" HorizontalAlignment="Left"
 Margin="422,44,0,0" VerticalAlignment="Top" Height="28"
 Width="251" HorizontalContentAlignment="Center"
 FontSize="18"/>
 
-            <Label x:Name="StatisticsBlock" HorizontalAlignment="Left"
+        <Label x:Name="StatisticsBlock" HorizontalAlignment="Left"
 Margin="557,110,0,0" VerticalAlignment="Top" Height="28"
 Width="107"/>
 
-            <Label Content="Alpha:" HorizontalAlignment="Left"
+        <Label Content="Alpha:" HorizontalAlignment="Left"
 
-Margin="205,73,0,0" VerticalAlignment="Top" Height="28"
+Margin="206,85,0,0" VerticalAlignment="Top" Height="28"
 Width="82" HorizontalContentAlignment="Left" FontSize="18"/>
-            <ComboBox x:Name="AlphaSelector" HorizontalAlignment="Left"
-Margin="282,73,0,0" VerticalAlignment="Top" Width="80"
-Height="28" SelectedIndex="2">
-                <ComboBoxItem Content="0,2"/>
-                <ComboBoxItem Content="0,1"/>
-                <ComboBoxItem Content="0,05"/>
-                <ComboBoxItem Content="0,02"/>
-                <ComboBoxItem Content="0,01"/>
-                <ComboBoxItem Content="0,005"/>
-                <ComboBoxItem Content="0,002"/>
-                <ComboBoxItem Content="0,001"/>
-            </ComboBox>
-            <Label Content="P ідентифікації:" HorizontalAlignment="Left"
+        <Label Content="P ідентифікації:" HorizontalAlignment="Left"
 Margin="387,110,0,0" VerticalAlignment="Top" Height="28"
 Width="165" HorizontalContentAlignment="Center"
 FontSize="16"/>
 
-            <Label Content="Помилка 1-го роду:" HorizontalAlignment="Left"
+        <Label Content="Помилка 1-го роду:" HorizontalAlignment="Left"
 Margin="387,144,0,0" VerticalAlignment="Top" Height="28"
 Width="184" HorizontalContentAlignment="Center"
 FontSize="16"/>
 
-            <Label Content="Помилка 2-го роду:" HorizontalAlignment="Left"
+        <Label Content="Помилка 2-го роду:" HorizontalAlignment="Left"
 Margin="387,177,0,0" VerticalAlignment="Top" Height="28"
 Width="184" HorizontalContentAlignment="Center"
 FontSize="16"/>
 
-            <Label x:Name="P1Field" HorizontalAlignment="Left"
+        <Label x:Name="P1Field" HorizontalAlignment="Left"
 
 Margin="581,144,0,0" VerticalAlignment="Top" Height="28"
 Width="107"/>
 
-            <Label x:Name="P2Field" HorizontalAlignment="Left"
+        <Label x:Name="P2Field" HorizontalAlignment="Left"
 
 Margin="581,178,0,0" VerticalAlignment="Top" Height="27"
 Width="107"/>
 
-            <Label Content="Дисперсії вибірок" HorizontalAlignment="Left"
+        <Label Content="Дисперсії вибірок" HorizontalAlignment="Left"
 Margin="381,77,0,0" VerticalAlignment="Top" Height="28"
 Width="187" HorizontalContentAlignment="Center"
 FontSize="16"/>
 
-            <Label x:Name="DispField" HorizontalAlignment="Left"
+        <Label x:Name="DispField" HorizontalAlignment="Left"
 Margin="583,77,0,0" VerticalAlignment="Top" Height="27"
 Width="123"/>
+        <TextBox x:Name="Triestextbox" Text="" TextWrapping="Wrap" Margin="148,85,521,103" Background="#FFE4DEE0" KeyDown="Triestextbox_KeyDown"/>
+        <Label x:Name="AlphaField" HorizontalAlignment="Left"
+            Margin="284,86,0,0" VerticalAlignment="Top" Height="26"
+            Width="60" Content="0.05"/>
+        <CheckBox x:Name="Legituser"  Content="Легітимний користувач?" Margin="10,65,488,130"/>
 
     </Grid>
 </Window>
