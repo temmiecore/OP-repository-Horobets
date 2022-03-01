@@ -166,7 +166,7 @@ namespace Prj_Soft_Protection
                 D = getD(y, tries, M);
                 Dsqrt = Math.Sqrt(D);
                 Tp = Math.Abs((y - M) / Dsqrt);
-                if (Tp > 2.364) //df = 7, alpha = 0.05, change for switch with 5-6 different choises
+                if (Tp > 2.364) //df = 7, alpha = 0.05
                 { check *= 0; }
             }
             return check;
