@@ -1,0 +1,43 @@
+C:\Users\cloud\source\repos\Prac2\Prac2\bin\Debug\netcoreapp3.1\Prac2.exe
+C:\Users\cloud\source\repos\Prac2\Prac2\bin\Debug\netcoreapp3.1\Prac2.deps.json
+C:\Users\cloud\source\repos\Prac2\Prac2\bin\Debug\netcoreapp3.1\Prac2.runtimeconfig.json
+C:\Users\cloud\source\repos\Prac2\Prac2\bin\Debug\netcoreapp3.1\Prac2.runtimeconfig.dev.json
+C:\Users\cloud\source\repos\Prac2\Prac2\bin\Debug\netcoreapp3.1\Prac2.dll
+C:\Users\cloud\source\repos\Prac2\Prac2\bin\Debug\netcoreapp3.1\Prac2.pdb
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\Prac2.csproj.AssemblyReference.cache
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\Prac2_MarkupCompile.cache
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\Prac2_MarkupCompile.lref
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\Prac2.g.resources
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\Prac2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\Prac2.AssemblyInfoInputs.cache
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\Prac2.AssemblyInfo.cs
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\Prac2.csproj.CoreCompileInputs.cache
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\Prac2.dll
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\Prac2.pdb
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\Prac2.genruntimeconfig.cache
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\bin\Debug\netcoreapp3.1\Prac2.exe
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\bin\Debug\netcoreapp3.1\Prac2.deps.json
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\bin\Debug\netcoreapp3.1\Prac2.runtimeconfig.json
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\bin\Debug\netcoreapp3.1\Prac2.runtimeconfig.dev.json
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\bin\Debug\netcoreapp3.1\Prac2.dll
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\bin\Debug\netcoreapp3.1\Prac2.pdb
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\bin\Debug\netcoreapp3.1\LiveCharts.dll
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\bin\Debug\netcoreapp3.1\LiveCharts.Wpf.dll
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.csproj.AssemblyReference.cache
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2_MarkupCompile.cache
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2_MarkupCompile.lref
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.g.resources
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.AssemblyInfoInputs.cache
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.AssemblyInfo.cs
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.csproj.CoreCompileInputs.cache
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.csproj.CopyComplete
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.dll
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.pdb
+C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.genruntimeconfig.cache
