@@ -1,0 +1,17 @@
+﻿<Window x:Class="ConnectToSQLServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConnectToSQLServer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="621.2" Width="1338" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid x:Name="SecondQ" HorizontalAlignment="Left" FontFamily="Cambria" FontSize="14" Height="128" Margin="621,10,0,0" VerticalAlignment="Top" Width="701"/>
+        <DataGrid x:Name="ThirdQ" HorizontalAlignment="Left" FontFamily="Cambria" FontSize="14" Height="286" Margin="621,143,0,0" VerticalAlignment="Top" Width="701"/>
+        <DataGrid x:Name="FirstQ" HorizontalAlignment="Left" FontFamily="Cambria" FontSize="14" Height="564" Margin="10,10,0,0" VerticalAlignment="Top" Width="606"/>
+        <DataGrid x:Name="SeventhQ" HorizontalAlignment="Left" FontFamily="Cambria" FontSize="14" Height="73" Margin="621,434,0,0" VerticalAlignment="Top" Width="251"/>
+        <Button Content="Other Queries" HorizontalAlignment="Left" VerticalAlignment="Top" Width="251" Margin="1070,514,0,0" Height="67" FontFamily="SimSun-ExtB" FontSize="24" Click="Button_Click"/>
+
+    </Grid>
+</Window>
