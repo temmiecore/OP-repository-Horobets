@@ -6,37 +6,49 @@
         xmlns:local="clr-namespace:ConnectToSQLServer"
         mc:Ignorable="d"
         Title="Авторизація:" Height="330" Width="270"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid x:Name="LoginGrid">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.6*"/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.6*"/>
-            <RowDefinition Height="0.6*"/>
-            <RowDefinition Height="0.6*"/>
-        </Grid.RowDefinitions>
-        <TextBox  x:Name="LoginTextBox" FontFamily="Times New Roman"  Grid.Row="2" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="170"/>
-        <Button  x:Name="LogInBtn"  Grid.Row="5" Content="Увійти в аккаунт" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="15" Width="120" Height="30" Margin="0,0,130,0" Click="LogInBtn_Click" />
-        <Button x:Name="ExitBtn" Grid.Row="5" Content="Вийти з вікна" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="15" Width="120" Height="30" Margin="130,0,0,0" Click="ExitBtn_Click"/>
-        <Button x:Name="RegBtn" Grid.Row="6" Content="Зарееструватися" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="16" Width="160" Height="26" Click="RegBtn_Click"/>
-        <Label  x:Name="L1"  Grid.Row="0" Content="Авторизація" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="20" />
-        <Label x:Name="L2" Grid.Row="1" Content="Введіть логін:" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Times New Roman" FontSize="20" />
-        <Label x:Name="L3" Grid.Row="3" Content="Пароль:" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Times New Roman" FontSize="20" />
-        <PasswordBox x:Name="LPasswordTextBox" Tag="1" Grid.Row="4" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="170" />
-
-        <Label  x:Name="L4" Grid.Row="0" Content="Реєстрація" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="Times New Roman" Visibility="Collapsed"/>
-        <Label  x:Name="L5" Grid.Row="1" Content="Введіть Ім'я:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"  FontFamily="Times New Roman" Margin="0,0,0,0" Visibility="Collapsed"/>
-        <Label  x:Name="L6" Grid.Row="2" Content="Фамілія:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="Times New Roman" Margin="0,0,0,0" Visibility="Collapsed"/>
-        <Label  x:Name="L7" Grid.Row="3" Content="Логін:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="Times New Roman" Margin="0,0,0,0" Visibility="Collapsed"/>
-        <Label  x:Name="L8" Grid.Row="4" Content="Пароль:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="Times New Roman" Margin="0,0,0,0" Visibility="Collapsed"/>
-        <Label  x:Name="L9" Grid.Row="5" Content="Підтвердіть пароль:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="Times New Roman" Margin="0,0.0,0,0" Width="127" Visibility="Collapsed"/>
-        <TextBox IsEnabled="False"  x:Name="RegName" Grid.Row="1" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Times New Roman" Margin="60,0,0,0" Width="120" Visibility="Collapsed"/>
-        <TextBox IsEnabled="False"  x:Name="RegSurn" Grid.Row="2" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Times New Roman" Margin="70,0,0,0" Width="120" Visibility="Collapsed"/>
-        <TextBox IsEnabled="False"  x:Name="RegLogin" Grid.Row="3" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Times New Roman" Margin="80,0,0,0" Width="120" Visibility="Collapsed"/>
-        <Button IsEnabled="False"  x:Name="RegistrBtn" Grid.Row="6" Content="Зареєструватися" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" FontFamily="Times New Roman" Margin="-130,0,0,0" Width="120" Visibility="Collapsed" Click="RegistrBtn_Click"/>
-        <Button IsEnabled="False"  x:Name="RegistrExt" Grid.Row="6" Content="Вийти з реєстрації" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" FontFamily="Times New Roman" Margin="130,0,0,0" Width="120" Visibility="Collapsed" Click="RegistrExt_Click"/>
-        <PasswordBox IsEnabled="False"  x:Name="RegPass" Grid.Row="4" HorizontalAlignment="Center" Height="23"  VerticalAlignment="Center" Margin="90,0,0,0" Width="120" Visibility="Collapsed"/>
-        <PasswordBox IsEnabled="False"  x:Name="RegPass2" Grid.Row="5" HorizontalAlignment="Center" Height="23" VerticalAlignment="Center" Margin="100,0,0,0" Width="120" Visibility="Collapsed"/>
+    <Grid x:Name="MainGrid">
+        <Grid x:Name="LoginGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="0.6*"/>
+            </Grid.RowDefinitions>
+            <TextBox  x:Name="LoginTextBox" FontFamily="Times New Roman"  Grid.Row="2" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="170"/>
+            <Button  x:Name="LogInBtn"  Grid.Row="5" Content="Увійти в аккаунт" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="15" Width="120" Height="30" Margin="0,0,130,0" Click="LogInBtn_Click" />
+            <Button x:Name="ExitBtn" Grid.Row="5" Content="Вийти з вікна" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="15" Width="120" Height="30" Margin="130,0,0,0" Click="ExitBtn_Click"/>
+            <Button x:Name="RegBtn" Grid.Row="6" Content="Зарееструватися" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="16" Width="160" Height="26" Click="RegBtn_Click"/>
+            <Label  x:Name="L1"  Grid.Row="0" Content="Авторизація" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="20" />
+            <Label x:Name="L2" Grid.Row="1" Content="Введіть логін:" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Times New Roman" FontSize="20" />
+            <Label x:Name="L3" Grid.Row="3" Content="Пароль:" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Times New Roman" FontSize="20" />
+            <PasswordBox x:Name="LPasswordTextBox" Tag="1" Grid.Row="4" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="170" />
+        </Grid>
+        <Grid x:Name="RegGrid" Visibility="Collapsed" IsEnabled="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="0.6*"/>
+            </Grid.RowDefinitions>
+        <Label  x:Name="L4" Grid.Row="0" Content="Реєстрація" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="Times New Roman" />
+        <Label  x:Name="L5" Grid.Row="1" Content="Введіть Ім'я:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"  FontFamily="Times New Roman" Margin="0,0,0,0" />
+        <Label  x:Name="L6" Grid.Row="2" Content="Фамілія:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="Times New Roman" Margin="0,0,0,0"/>
+        <Label  x:Name="L7" Grid.Row="3" Content="Логін:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="Times New Roman" Margin="0,0,0,0" />
+        <Label  x:Name="L8" Grid.Row="4" Content="Пароль:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="Times New Roman" Margin="0,0,0,0" />
+        <Label  x:Name="L9" Grid.Row="5" Content="Підтвердіть пароль:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="Times New Roman" Margin="0,0.0,0,0" Width="127" />
+        <TextBox   x:Name="RegName" Grid.Row="1" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Times New Roman" Margin="60,0,0,0" Width="120" />
+        <TextBox x:Name="RegSurn" Grid.Row="2" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Times New Roman" Margin="70,0,0,0" Width="120" />
+        <TextBox   x:Name="RegLogin" Grid.Row="3" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Times New Roman" Margin="80,0,0,0" Width="120" />
+        <Button  x:Name="RegistrBtn" Grid.Row="6" Content="Зареєструватися" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" FontFamily="Times New Roman" Margin="-130,0,0,0" Width="120"  Click="RegistrBtn_Click"/>
+        <Button   x:Name="RegistrExt" Grid.Row="6" Content="Вийти з реєстрації" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" FontFamily="Times New Roman" Margin="130,0,0,0" Width="120" Click="RegistrExt_Click"/>
+        <PasswordBox   x:Name="RegPass" Grid.Row="4" HorizontalAlignment="Center" Height="23"  VerticalAlignment="Center" Margin="90,0,0,0" Width="120" />
+        <PasswordBox   x:Name="RegPass2" Grid.Row="5" HorizontalAlignment="Center" Height="23" VerticalAlignment="Center" Margin="100,0,0,0" Width="120" />
+        </Grid>
     </Grid>
 </Window>

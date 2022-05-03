@@ -89,22 +89,12 @@ namespace ConnectToSQLServer
         }
         private void RegOpen()
         {
-            L1.Visibility = Visibility.Hidden; L2.Visibility = Visibility.Hidden; L3.Visibility = Visibility.Hidden;
-            ExitBtn.Visibility = Visibility.Hidden; RegBtn.Visibility = Visibility.Hidden; LogInBtn.Visibility = Visibility.Hidden;
-            LoginTextBox.Visibility = Visibility.Hidden; LPasswordTextBox.Visibility = Visibility.Hidden;
-            ExitBtn.IsEnabled = false; RegBtn.IsEnabled = false; LogInBtn.IsEnabled = false; LoginTextBox.IsEnabled = false;
-            LPasswordTextBox.IsEnabled = false;
-
-            L4.Visibility = Visibility.Visible; L5.Visibility = Visibility.Visible; L6.Visibility = Visibility.Visible;
-            L7.Visibility = Visibility.Visible; L8.Visibility = Visibility.Visible; L9.Visibility = Visibility.Visible;
-            RegName.Visibility = Visibility.Visible; RegSurn.Visibility = Visibility.Visible; RegLogin.Visibility = Visibility.Visible;
-            RegistrBtn.Visibility = Visibility.Visible; RegistrExt.Visibility = Visibility.Visible; RegPass.Visibility = Visibility.Visible; RegPass2.Visibility = Visibility.Visible;
-            RegName.IsEnabled = true; RegSurn.IsEnabled = true; RegLogin.IsEnabled = true;
-            RegistrBtn.IsEnabled = true; RegistrExt.IsEnabled = true; RegPass.IsEnabled = true; RegPass2.IsEnabled = true;
-
+            LoginGrid.Visibility = Visibility.Collapsed;
+            LoginGrid.IsEnabled = false;
+            RegGrid.Visibility = Visibility.Visible;
+            RegGrid.IsEnabled = true;
             LoginTextBox.Text = ""; LPasswordTextBox.Password = "";
         }
-        //Really need to redo this part... ^
 
 
         //Registration Part Logic
@@ -154,19 +144,10 @@ namespace ConnectToSQLServer
         }
         private void RegistrExt_Click(object sender, RoutedEventArgs e)
         {
-            L1.Visibility = Visibility.Visible; L2.Visibility = Visibility.Visible; L3.Visibility = Visibility.Visible;
-            ExitBtn.Visibility = Visibility.Visible; RegBtn.Visibility = Visibility.Visible; LogInBtn.Visibility = Visibility.Visible;
-            LoginTextBox.Visibility = Visibility.Visible; LPasswordTextBox.Visibility = Visibility.Visible;
-            ExitBtn.IsEnabled = true; RegBtn.IsEnabled = true; LogInBtn.IsEnabled = true; LoginTextBox.IsEnabled = true;
-            LPasswordTextBox.IsEnabled = true;
-
-            L4.Visibility = Visibility.Hidden; L5.Visibility = Visibility.Hidden; L6.Visibility = Visibility.Hidden;
-            L7.Visibility = Visibility.Hidden; L8.Visibility = Visibility.Hidden; L9.Visibility = Visibility.Hidden;
-            RegName.Visibility = Visibility.Hidden; RegSurn.Visibility = Visibility.Hidden; RegLogin.Visibility = Visibility.Hidden;
-            RegistrBtn.Visibility = Visibility.Hidden; RegistrExt.Visibility = Visibility.Hidden; RegPass.Visibility = Visibility.Hidden; RegPass2.Visibility = Visibility.Hidden;
-            RegName.IsEnabled = false; RegSurn.IsEnabled = false; RegLogin.IsEnabled = false;
-            RegistrBtn.IsEnabled = false; RegistrExt.IsEnabled = false; RegPass.IsEnabled = false; RegPass2.IsEnabled = false;
-
+            LoginGrid.Visibility = Visibility.Visible;
+            LoginGrid.IsEnabled = true;
+            RegGrid.Visibility = Visibility.Collapsed;
+            RegGrid.IsEnabled = false;
             RegName.Text = ""; RegSurn.Text = ""; RegLogin.Text = ""; RegPass.Password = ""; RegPass2.Password = "";
         }
     }
