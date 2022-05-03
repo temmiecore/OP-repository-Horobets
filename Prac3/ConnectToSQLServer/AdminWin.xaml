@@ -1,0 +1,20 @@
+﻿<Window x:Class="ConnectToSQLServer.AdminWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConnectToSQLServer"
+        mc:Ignorable="d"
+        Title="Авторизація адміністратора" Height="140" Width="250" FontFamily="Times New Roman" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Введіть пароль:" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="20"/>
+        <Button x:Name="EnterBtn" Grid.Row="2" Content="Авторизуватися" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="20" Width="170" Click="EnterBtn_Click"/>
+        <PasswordBox x:Name="AdminPass" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" FontFamily="Times New Roman" FontSize="20"/>
+
+    </Grid>
+</Window>
