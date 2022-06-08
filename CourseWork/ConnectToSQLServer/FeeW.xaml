@@ -1,0 +1,33 @@
+﻿<Window x:Class="ConnectToSQLServer.FeeW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConnectToSQLServer"
+        mc:Ignorable="d"
+        Title="Вікно підрахунку чека" Height="210" Width="400" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.1*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="IDBox" Grid.Row="0" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" FontFamily="Times New Roman" FontSize="16" VerticalAlignment="Center" Width="40" Margin="37,0,0,0"/>
+        <Label Grid.Row="0" Content="ID: " HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="16" Margin="5,0,0,0"/>
+        <Label x:Name="FeeLabel" Grid.RowSpan="3" Grid.Column="1" Content="$000000" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="16" VerticalAlignment="Center"/>
+        <Button x:Name="OneAttBtn" Grid.Row="0"  Content="Адвокат" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="16" Height="27" Width="100" Margin="0,0,13,0" Click="OneAttBtn_Click"/>
+        <Button x:Name="AllAttBtn" Grid.Row="1"  Content="Усі незавершені справи" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="16" VerticalAlignment="Center" Width="180" Height="30" Click="AllAttBtn_Click"/>
+        <Button x:Name="AllCasesBtn" Grid.Row="2"  Content="Усі справи загалом" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="16" VerticalAlignment="Center" Height="30" Width="150" Click="AllCasesBtn_Click"/>
+        <Button x:Name="ExitBtn" Grid.Row="3" Grid.ColumnSpan="2"  Content="Попереднє меню" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="16" VerticalAlignment="Center" Height="35" Width="220" Click="ExitBtn_Click"/>
+        <Rectangle Grid.RowSpan="3" Grid.Column="1" HorizontalAlignment="Left" Height="55" Stroke="Black" VerticalAlignment="Top" Width="130" Margin="29,36,0,0"/>
+        <Label Grid.RowSpan="3" Grid.Column="1" Content="Чек на оплату:" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="16" VerticalAlignment="Center" Margin="0,-3,0,86"/>
+        <Button x:Name="PrintBtn" Grid.Row="2" Grid.Column="1" Content="Роздрукувати" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="16" VerticalAlignment="Center" Height="27" Width="120" Click="PrintBtn_Click" Margin="28.2,6.2,28.2,6"/>
+        <Rectangle Grid.RowSpan="3" HorizontalAlignment="Left" Height="135" Stroke="Black" VerticalAlignment="Top" Width="188" Margin="206,0,-0.4,0" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>

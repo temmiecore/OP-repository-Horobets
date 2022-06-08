@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZNe9e4TplGqd8apVvtfhdWMVadJ1HuqzIFdGlSzi/4AoRkAQISZhgQ9WpAAjYlhI22eb6I9BU/2zybFR2JINfg==",
+  "dgSpecHash": "8dYcA9EOQWfp1Quo0axVj7bSNoU/+AUczc7CHbMFz0uEqCwp52h2mIS995vrgGffrlq2QO6XQ+9AF6xh5YyV9g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cloud\\source\\repos\\Prac2 - Copy\\Prac2\\Prac2.csproj",
+  "projectFilePath": "C:\\Users\\cloud\\source\\repos\\Prac2\\Prac2\\Prac2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cloud\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
     "C:\\Users\\cloud\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512"

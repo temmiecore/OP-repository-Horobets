@@ -41,3 +41,6 @@ C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.csp
 C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.dll
 C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.pdb
 C:\Users\cloud\source\repos\Prac2 - Copy\Prac2\obj\Debug\netcoreapp3.1\Prac2.genruntimeconfig.cache
+C:\Users\cloud\source\repos\Prac2\Prac2\bin\Debug\netcoreapp3.1\LiveCharts.dll
+C:\Users\cloud\source\repos\Prac2\Prac2\bin\Debug\netcoreapp3.1\LiveCharts.Wpf.dll
+C:\Users\cloud\source\repos\Prac2\Prac2\obj\Debug\netcoreapp3.1\Prac2.csproj.CopyComplete

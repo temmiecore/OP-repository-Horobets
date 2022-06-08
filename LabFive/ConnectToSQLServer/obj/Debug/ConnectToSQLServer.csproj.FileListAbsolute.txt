@@ -46,10 +46,6 @@ C:\Users\cloud\source\repos\LabFive\ConnectToSQLServer\obj\Debug\ConnectToSQLSer
 C:\Users\cloud\source\repos\LabFive\ConnectToSQLServer\obj\Debug\ConnectToSQLServer.csproj.GenerateResource.cache
 C:\Users\cloud\source\repos\LabFive\ConnectToSQLServer\obj\Debug\ConnectToSQLServer.csproj.CoreCompileInputs.cache
 C:\Users\cloud\source\repos\LabFive\ConnectToSQLServer\obj\Debug\AddAttW.g.cs
-C:\Users\cloud\source\repos\LabFive\ConnectToSQLServer\obj\Debug\AddW.g.cs
 C:\Users\cloud\source\repos\LabFive\ConnectToSQLServer\obj\Debug\AddAttW.baml
-C:\Users\cloud\source\repos\LabFive\ConnectToSQLServer\obj\Debug\AddW.baml
-C:\Users\cloud\source\repos\LabFive\ConnectToSQLServer\obj\Debug\AddClW.g.cs
-C:\Users\cloud\source\repos\LabFive\ConnectToSQLServer\obj\Debug\AddClW.baml
 C:\Users\cloud\source\repos\LabFive\ConnectToSQLServer\obj\Debug\QuerieW.g.cs
 C:\Users\cloud\source\repos\LabFive\ConnectToSQLServer\obj\Debug\QuerieW.baml

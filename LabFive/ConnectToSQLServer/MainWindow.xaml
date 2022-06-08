@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConnectToSQLServer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="300" ResizeMode="NoResize" Background="#FFC5D0DA">
+        Title="Головне меню" Height="350" Width="300" ResizeMode="NoResize" Background="#FFC5D0DA" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,5,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.3*"/>
@@ -14,9 +14,10 @@
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
-        <Label Content="Main menu" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="30" FontFamily="SimSun-ExtB" Width="145"/>
-        <Button Content="Add Menu" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Width="200" Height="45" FontFamily="SimSun-ExtB" FontSize="28" Click="AddW_Click"/>
-        <Button Content="See Queries" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Width="200" Height="45" FontFamily="SimSun-ExtB" FontSize="28" Click="Queries_Click"/>
-        <Button Content="Exit" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="200" Height="45" FontFamily="SimSun-ExtB" FontSize="28" Click="Exit_Click"/>
+        <Label Content="Інф. система адвок. контори" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="22" FontFamily="Times New Roman" Width="274" Margin="10,1,9.6,0.6" Height="37"/>
+        <Button Content="Оновити БД" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Width="200" Height="45" FontFamily="Times New Roman" FontSize="28" Click="AddW_Click"/>
+        <Button Content="Запити" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Width="200" Height="45" FontFamily="Times New Roman" FontSize="28" Click="Queries_Click"/>
+        <Button Content="Функціонал" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Width="200" Height="45" FontFamily="Times New Roman" FontSize="28" Click="Func_Click"/>
+        <Button Content="Вихід" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="200" Height="45" FontFamily="Times New Roman" FontSize="28" Click="Exit_Click"/>
     </Grid>
 </Window>

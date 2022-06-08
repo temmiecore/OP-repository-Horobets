@@ -95,7 +95,7 @@ namespace ConnectToSQLServer
         
         private void GetSeventhQ()
         {
-            string sqlQ = "SELECT SUM(Fee) AS [Total Fee Number] FROM Cases;";
+            string sqlQ = "SELECT '$'+CONVERT(varchar,SUM(Fee))  AS [Total Fee Number] FROM Cases;";
             try
             {
                 GetAndDhowData(sqlQ, SeventhQ);

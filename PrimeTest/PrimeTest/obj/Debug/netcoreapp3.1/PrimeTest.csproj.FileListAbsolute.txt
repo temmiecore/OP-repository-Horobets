@@ -1,0 +1,14 @@
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\bin\Debug\netcoreapp3.1\PrimeTest.exe
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\bin\Debug\netcoreapp3.1\PrimeTest.deps.json
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\bin\Debug\netcoreapp3.1\PrimeTest.runtimeconfig.json
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\bin\Debug\netcoreapp3.1\PrimeTest.runtimeconfig.dev.json
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\bin\Debug\netcoreapp3.1\PrimeTest.dll
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\bin\Debug\netcoreapp3.1\PrimeTest.pdb
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\obj\Debug\netcoreapp3.1\PrimeTest.csproj.AssemblyReference.cache
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\obj\Debug\netcoreapp3.1\PrimeTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\obj\Debug\netcoreapp3.1\PrimeTest.AssemblyInfoInputs.cache
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\obj\Debug\netcoreapp3.1\PrimeTest.AssemblyInfo.cs
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\obj\Debug\netcoreapp3.1\PrimeTest.csproj.CoreCompileInputs.cache
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\obj\Debug\netcoreapp3.1\PrimeTest.dll
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\obj\Debug\netcoreapp3.1\PrimeTest.pdb
+C:\Users\cloud\source\repos\PrimeTest\PrimeTest\obj\Debug\netcoreapp3.1\PrimeTest.genruntimeconfig.cache

@@ -5,32 +5,109 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConnectToSQLServer"
         mc:Ignorable="d"
-        Title="AddAttW" Height="350" Width="1200">
+        Title="Вікно оновлення (адв.)" Height="350" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.45*"/>
-            <ColumnDefinition Width="0.55*"/>
-        </Grid.ColumnDefinitions>
-        <DataGrid x:Name="AttGrid" Grid.Column="1" HorizontalAlignment="Center" Height="313" VerticalAlignment="Center" Width="651"/>
-        <Label Content="Input/Update data (Attorney):" Grid.Column="0" FontSize="24" Height="36.8"  FontFamily="SimSun-ExtB" Width="355" Margin="15,-30,36.6,233.4" HorizontalAlignment="Center"/>
-        <Label Content="Name, Surname:" Grid.Column="0" FontSize="18"  Height="30"  FontFamily="SimSun-ExtB" Width="176" HorizontalAlignment="Left" Margin="15,7,0,196.4"/>
-        <Label Content="Phone Number (000-000-0000):" Grid.Column="0" FontSize="18" Height="30"   FontFamily="SimSun-ExtB" Width="264" HorizontalAlignment="Left" Margin="263,22,0,208.4"/>
-        <Label Content="Adress:" Grid.Column="0" FontSize="18" Height="30"  FontFamily="SimSun-ExtB" Width="93" HorizontalAlignment="Left" Margin="15,89,0,151.4"/>
-        <Label Content="Education (optional):" Grid.Column="0" FontSize="18" Height="30"  FontFamily="SimSun-ExtB" Width="221" HorizontalAlignment="Left" Margin="15,138,0,92.4"/>
-        <TextBox x:Name="NameSurname"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="15,80,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
-        <TextBox x:Name="Phonenum"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="263,80,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
-        <TextBox x:Name="Adress"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="15,139,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
-        <TextBox x:Name="Edu"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="15,198,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
-        <Label Content="Birthday (yyyy-mm-dd):" Grid.Column="0" FontSize="18" Height="30"  FontFamily="SimSun-ExtB" Width="221" HorizontalAlignment="Left" Margin="263,89,0,151.4"/>
-        <TextBox x:Name="Bdate"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="263,139,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
-        <Button Content="Add/Update DB" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="209" Margin="308,236,19.8,0" Height="35" FontFamily="SimSun-ExtB" FontSize="22" Click="AddBtn_Click"/>
-        <Label Content="Remove by ID:" HorizontalAlignment="Left" FontFamily="SimSun-ExtB" FontSize="18" VerticalAlignment="Top" Margin="18,255,0,0"/>
-        <TextBox x:Name="RemoveID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="87" Margin="149,259,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
-        <Button Content="Remove Attorney" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="209" Margin="308,276,19.8,0" Height="35" FontFamily="SimSun-ExtB" FontSize="22" Click="RemBtn_Click"/>
-        <Label Content="ID (for update):" Grid.Column="0" FontSize="18" Height="30"  FontFamily="SimSun-ExtB" Width="221" HorizontalAlignment="Left" Margin="263,168,0,122.8"/>
-        <TextBox x:Name="IDUpdate"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="263,198,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+        <Popup Margin="-3,-31,0,0" Width="440" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" IsOpen="True">
+            <StackPanel>
+                <Button x:Name="AttBookMark" Content="Адвокати" FontFamily="Times New Roman" FontSize="19" Width="110" Height="30" HorizontalAlignment="Left" Click="AttBookMark_Click"/>
+                <Button x:Name="ClBookMark"  Content="Клієнти" FontFamily="Times New Roman" FontSize="19" Width="110" Height="30" HorizontalAlignment="Left" Margin="110,-30,0,0" Click="ClBookMark_Click"/>
+                <Button x:Name="CaseBookMark"  Content="Справи" FontFamily="Times New Roman" FontSize="19" Width="110" Height="30" HorizontalAlignment="Left" Margin="330,-30,0,0" Click="CaseBookMark_Click"/>
+                <Button x:Name="JournalBookMark"  Content="Журнал" FontFamily="Times New Roman" FontSize="19" Width="110" Height="30" HorizontalAlignment="Left" Margin="220,-30,0,0" Click="JournalBookMark_Click"/>
+            </StackPanel>
+        </Popup>
+        <Grid x:Name ="ClAndAttWindow" >
+            <Label Content="ID для видалення:" HorizontalAlignment="Left" FontFamily="Times New Roman" FontSize="18" VerticalAlignment="Top" Margin="18,255,0,0"/>
+            <TextBox x:Name="RemoveID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="87" Margin="168,259,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <Label Content="Псевдонім:" Grid.Column="0" FontSize="18"  Height="30"  FontFamily="Times New Roman" Width="104" HorizontalAlignment="Left" Margin="15,51,0,239.8"/>
+            <Label Content="Номер телефону (000-000-0000):" Grid.Column="0" FontSize="18" Height="30"   FontFamily="Times New Roman" Width="264" HorizontalAlignment="Left" Margin="263,21,0,208.4"/>
+            <Label Content="Адреса:" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="93" HorizontalAlignment="Left" Margin="15,87,0,151.4"/>
+            <TextBox x:Name="Alias"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="15,80,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <TextBox x:Name="Phonenum"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="263,80,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <TextBox x:Name="Adress"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="15,139,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <TextBox x:Name="Bdate"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="263,139,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <Label Content="День народження (yyyy-mm-dd):" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="264" HorizontalAlignment="Left" Margin="263,110,0,176.8"/>
+            <Label Content="ID для оновлення:" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="221" HorizontalAlignment="Left" Margin="263,168,0,122.8"/>
+            <TextBox x:Name="IDUpdate"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="263,198,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+        </Grid>
+        <DataGrid x:Name="MainGrid" Grid.Column="1" HorizontalAlignment="Center" Height="313" VerticalAlignment="Center" Width="651" Margin="535,0,0,0"/>
+        <Grid x:Name="AttWindow" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.45*"/>
+                <ColumnDefinition Width="0.55*"/>
+            </Grid.ColumnDefinitions>
 
+            <Label Content="Оновити БД адвокатів:" Grid.Column="0" FontSize="24" Height="36.8"  FontFamily="Times New Roman" Width="244" Margin="15,-30,36.6,233.4" HorizontalAlignment="Center"/>
+            <Label Content="Освіта (опціонально):" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="221" HorizontalAlignment="Left" Margin="15,138,0,92.4"/>
+            <TextBox x:Name="EduAt"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="15,198,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <Button Content="Додати\Оновити адв." Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="218" Margin="308,234,19.8,0" Height="36" FontFamily="Times New Roman" FontSize="20" Click="AddBtn_Click"/>
+            <Button Content="Видалити адвоката" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="215" Margin="306,273,19.8,0" Height="35" FontFamily="Times New Roman" FontSize="22" Click="RemBtn_Click"/>
+        </Grid>
+        <Grid x:Name="ClientWindow" IsEnabled="False" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.45*"/>
+                <ColumnDefinition Width="0.55*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Оновити БД клієнтів:" Grid.Column="0" FontSize="24" Height="36.8"  FontFamily="Times New Roman" Width="227" Margin="15,-30,36.6,233.4" HorizontalAlignment="Center"/>
+            <Label Content="Фізична особа? (Ні- юр.)?:" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="221" HorizontalAlignment="Left" Margin="15,138,0,92.4"/>
+            <Button Content="Додати\оновити кл." Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="214" Margin="308,234,19.8,0" Height="35" FontFamily="Times New Roman" FontSize="22" Click="AddBtn_Click"/>
+            <Button Content="Видалити клієнта" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="224" Margin="308,273,19.8,0" Height="35" FontFamily="Times New Roman" FontSize="22" Click="RemBtn_Click"/>
+            <CheckBox  x:Name="IsPhys" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,198,0,0" Width="22" Height="21.8"/>
+        </Grid>
+        
+        
+        <Grid x:Name="CaseWindow" Visibility="Hidden" IsEnabled="False" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.45*"/>
+                <ColumnDefinition Width="0.55*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Оновити БД справ:" Grid.Column="0" FontSize="24" Height="36.8"  FontFamily="Times New Roman" Width="204" Margin="15,-30,36.6,233.4" HorizontalAlignment="Center"/>
+            <Label Content="Тип правопорушення:" Grid.Column="0" FontSize="18"  Height="30"  FontFamily="Times New Roman" Width="178" HorizontalAlignment="Left" Margin="15,49,0,239.8"/>
+            <Label Content="Найкращий вирок:" Grid.Column="0" FontSize="18" Height="30"   FontFamily="Times New Roman" Width="264" HorizontalAlignment="Left" Margin="263,21,0,208.4"/>
+            <Label Content="Покарання - срок? (ні - штраф):" Grid.Column="0" FontSize="17" Height="30"  FontFamily="Times New Roman" Width="237" HorizontalAlignment="Left" Margin="15,87,0,151.4"/>
+            <CheckBox  x:Name="IsYr" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,144,0,0" Width="22" Height="21.8"/>
+            <Label Content="Чек (ціна роботи адвоката):" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="221" HorizontalAlignment="Left" Margin="15,138,0,92.4"/>
+            <TextBox x:Name="Crimetype"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="15,80,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <TextBox x:Name="SentenceB"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="263,80,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <TextBox x:Name="Fee"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="15,198,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <Label Content="Найгірший вирок:" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="264" HorizontalAlignment="Left" Margin="263,110,0,176.8"/>
+            <TextBox x:Name="SentenceW"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209" Margin="263,139,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <Button Content="Додати\Оновити справу" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="216" Margin="308,234,19.8,0" Height="35" FontFamily="Times New Roman" FontSize="19" Click="AddBtn_Click"/>
+            <Button Content="Видалити справу" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="221" Margin="308,273,19.8,0" Height="35" FontFamily="Times New Roman" FontSize="22" Click="RemBtn_Click"/>
+        </Grid>
 
-
+        <Grid x:Name="JournalWindow"  IsEnabled="False" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="62*"/>
+                <RowDefinition Height="45*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.45*"/>
+                <ColumnDefinition Width="0.55*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Оновити журнал:" Grid.Column="0" FontSize="24" Height="36.8"  FontFamily="Times New Roman" Width="204" Margin="156,10,176.8,138.8" HorizontalAlignment="Center"/>
+             <Label Content="Закінчена?" Grid.Column="0" FontSize="18" Height="30"   FontFamily="Times New Roman" Width="110" HorizontalAlignment="Left" Margin="300,47,0,108.8"/>
+            <Label Content="ID клієнта:" Grid.Column="0" FontSize="17" Height="30"  FontFamily="Times New Roman" Width="99" HorizontalAlignment="Left" Margin="15,45,0,110.8"/>
+            <CheckBox  x:Name="IsOver" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="338,75,0,0" Width="22" Height="22"/>
+            <Label Content="Дата початку:" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="121" HorizontalAlignment="Left" Margin="15,104,0,51.8"/>
+            <TextBox x:Name="IDcl"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="115" Margin="15,75,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <TextBox x:Name="Datestart"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="136,110,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <Label Content="ID адвоката:" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="118" HorizontalAlignment="Left" Margin="150,47,0,108.8"/>
+            <TextBox x:Name="IDatt"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="115" Margin="150,75,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <Button Content="Додати\Оновити справу" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="228" Margin="304,48.2,16.8,0" Height="35" FontFamily="Times New Roman" FontSize="19" Click="AddBtn_Click" Grid.Row="1"/>
+            <Button Content="Видалити справу" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="225" Margin="302,87.2,13.8,0" Height="35" FontFamily="Times New Roman" FontSize="22" Click="RemBtn_Click" Grid.Row="1"/>
+            <Label Content="Дата кінця:" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="112" HorizontalAlignment="Left" Margin="267,104,0,51.8"/>
+            <TextBox x:Name="Dateover"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="370,110,0,0" FontFamily="SimSun-ExtB" FontSize="16"/>
+            <Label Content="Результат (Срок/штраф):" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="200" HorizontalAlignment="Left" Margin="15,139,0,16.8"/>
+            <TextBox x:Name="Result"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="152" Margin="15,169,0,0" FontFamily="SimSun-ExtB" FontSize="16" Grid.RowSpan="2"/>
+            <Label Content="Тюрьма (назва):" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="200" HorizontalAlignment="Left" Margin="229,139,0,16.8"/>
+            <TextBox x:Name="Prison"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="223" Margin="227,169,0,0" FontFamily="SimSun-ExtB" FontSize="16" Grid.RowSpan="2"/>
+            <Label Content="№ Камери:" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="99" HorizontalAlignment="Left" Margin="15,7.2,0,97.8" Grid.Row="1"/>
+            <TextBox x:Name="Cellnum"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="99" Margin="15,37.2,0,0" FontFamily="SimSun-ExtB" FontSize="16" Grid.Row="1"/>
+            <Rectangle HorizontalAlignment="Left" Height="1" Stroke="Black" VerticalAlignment="Top" Width="539" Margin="0,139,0,0" Grid.ColumnSpan="2"/>
+            <Label Content="ID видалення:" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="121" HorizontalAlignment="Left" Margin="15,66.2,0,38.8" Grid.Row="1"/>
+            <Label Content="ID оновлення:" Grid.Column="0" FontSize="18" Height="30"  FontFamily="Times New Roman" Width="121" HorizontalAlignment="Left" Margin="15,96.2,0,8.8" Grid.Row="1"/>
+            <TextBox x:Name="JournalUpd"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="74" Margin="141,72.2,0,0" FontFamily="SimSun-ExtB" FontSize="16" Grid.Row="1"/>
+            <TextBox x:Name="JournalRm"  HorizontalAlignment="Left" Height="24" TextWrapping="Wrap"  VerticalAlignment="Top" Width="74" Margin="141,100.2,0,0" FontFamily="SimSun-ExtB" FontSize="16" Grid.Row="1"/>
+        </Grid>
     </Grid>
 </Window>

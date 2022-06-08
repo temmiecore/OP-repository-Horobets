@@ -14,12 +14,9 @@ namespace ConnectToSQLServer
             InitializeComponent();
         }
 
-
-       
-
         private void AddW_Click(object sender, RoutedEventArgs e)
         {
-            AddW wn = new AddW();
+            AddAttW wn = new AddAttW();
             wn.Show();
             Close();
         }
@@ -35,6 +32,11 @@ namespace ConnectToSQLServer
         {
             Application.Current.Shutdown();
             Close();
+        }
+
+        private void Func_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

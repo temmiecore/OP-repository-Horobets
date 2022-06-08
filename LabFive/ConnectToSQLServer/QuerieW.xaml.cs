@@ -31,20 +31,20 @@ namespace ConnectToSQLServer
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             queries = new string[7];
-            queries[0] = "SELECT Alias, Clients.Adress, Clients.PhoneNum, Crimetype " +
+            queries[0] = "SELECT Alias, Clients.Adress, Clients.PhoneNum AS [Phone Number], Crimetype AS Crime " +
                           "FROM ClienTs " +
                           "INNER JOIN Journal ON Journal.ClD = Clients.CID " +
                           " INNER JOIN Cases ON Journal.CaseID = Cases.CaseID " +
                           "ORDER BY CrimeType; ";
 
-            queries[1] = "SELECT Alias AS [Name, Surname], Clients.BDate AS [Date of Birth], Clients.Adress, Clients.PhoneNum, Crimetype AS Crime " +
+            queries[1] = "SELECT Alias AS [Name, Surname], CONVERT(Date, Clients.BDate) AS [Date of Birth], Clients.Adress , Clients.PhoneNum AS [Phone Number], Crimetype AS Crime " +
                                        "FROM ClienTs " +
                                        "INNER JOIN Journal ON Journal.ClD = Clients.CID " +
                                        "INNER JOIN Cases ON Journal.CaseID = Cases.CaseID " +
                                        "WHERE ClienTs.BDate >= '2004-01-01' " +
                                        "ORDER BY Alias; ";
 
-            queries[2] = "SELECT Alias, Clients.Adress, Clients.PhoneNum, Crimetype AS Crime, SentenceW  + ' years' AS [Worst Possible Scenario] " +
+            queries[2] = "SELECT Alias, Clients.Adress, Clients.PhoneNum AS [Phone Number], Crimetype AS Crime, SentenceW  + ' years' AS [Worst Possible Scenario] " +
                                           "FROM ClienTs " +
                                         "INNER JOIN Journal ON Journal.ClD = Clients.CID " +
                                          "INNER JOIN Cases ON Journal.CaseID = Cases.CaseID " +
@@ -54,20 +54,20 @@ namespace ConnectToSQLServer
             queries[3] = "SELECT Journal.CaseID, Attorneys.NameSurname AS Attorney, Attorneys.PhoneNum AS[Attorney's Phone Number], " +
                                      " Alias AS Client, Clients.PhoneNum AS[Clien's Phone Number], CrimeType AS Crime, " +
                                     " CaseClosed AS[Case closing Date],   CASE IsYr    WHEN 1 THEN SentenceGot + ' years'  WHEN 0 THEN '$' + SentenceGot END " +
-                                     "  AS Result, Fee FROM Journal INNER JOIN Clients ON Journal.ClD = Clients.CID  INNER JOIN Cases ON Journal.CaseID = Cases.CaseID " +
+                                     "  AS Result, '$' + CONVERT(varchar, Fee) FROM Journal INNER JOIN Clients ON Journal.ClD = Clients.CID  INNER JOIN Cases ON Journal.CaseID = Cases.CaseID " +
                                         "  INNER JOIN Attorneys ON Attorneys.AttID = Journal.AttID WHERE IsOver = 1 ORDER BY Journal.CaseID; ";
 
             queries[4] = "SELECT Journal.CaseID, Attorneys.NameSurname AS Attorney, Attorneys.PhoneNum AS [Attorney's Phone Number], " +
                      " Alias AS Client, Clients.PhoneNum AS[Clien's Phone Number],   CASE IsYr  WHEN 1 THEN SentenceW + ' years' WHEN 0 THEN '$' + SentenceW END " +
-                " AS[Worst Scenario],  CASE IsYr  WHEN 1 THEN SentenceGot + ' years' WHEN 0 THEN '$' + SentenceGot END  AS Result, Fee " +
+                " AS[Worst Scenario],  CASE IsYr  WHEN 1 THEN SentenceGot + ' years' WHEN 0 THEN '$' + SentenceGot END  AS Result, '$' + CONVERT(varchar, Fee) " +
                "FROM Journal INNER JOIN Clients ON Journal.ClD = Clients.CID INNER JOIN Cases ON Journal.CaseID = Cases.CaseID " +
                 "INNER JOIN Attorneys ON Attorneys.AttID = Journal.AttID WHERE SentenceGot < SentenceW ORDER BY Journal.CaseID; ";
 
             queries[5] = "SELECT Attorneys.NameSurname AS [Name, Surname], Attorneys.Adress, Attorneys.PhoneNum AS [Phone Number], Education, " +
-                "Clients.Alias[Client], Journal.CaseClosed AS[Closing Date], Fee AS[Earned Fee] FROM Attorneys  INNER JOIN Journal ON Journal.AttID = Attorneys.AttID " +
+                "Clients.Alias[Client], Journal.CaseClosed AS[Closing Date], '$' + CONVERT(varchar, Fee) AS[Earned Fee] FROM Attorneys  INNER JOIN Journal ON Journal.AttID = Attorneys.AttID " +
                "INNER JOIN Clients ON Journal.ClD = Clients.CID INNER JOIN Cases ON Journal.CaseID = Cases.CaseID WHERE IsOver = 1 ORDER BY Attorneys.NameSurname;  ";
 
-            queries[6] = "SELECT SUM(Fee) AS [Total Fee Number] FROM Cases;";
+            queries[6] = "SELECT '$' + CONVERT(varchar, SUM(Fee)) AS [Total Fee Number] FROM Cases;";
 
             ShowQuerie(querieNum);
             Label.Content = "№1, Усі підзахисні";

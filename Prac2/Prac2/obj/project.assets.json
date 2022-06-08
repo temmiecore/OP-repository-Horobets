@@ -78,11 +78,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cloud\\source\\repos\\Prac2 - Copy\\Prac2\\Prac2.csproj",
+      "projectUniqueName": "C:\\Users\\cloud\\source\\repos\\Prac2\\Prac2\\Prac2.csproj",
       "projectName": "Prac2",
-      "projectPath": "C:\\Users\\cloud\\source\\repos\\Prac2 - Copy\\Prac2\\Prac2.csproj",
+      "projectPath": "C:\\Users\\cloud\\source\\repos\\Prac2\\Prac2\\Prac2.csproj",
       "packagesPath": "C:\\Users\\cloud\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cloud\\source\\repos\\Prac2 - Copy\\Prac2\\obj\\",
+      "outputPath": "C:\\Users\\cloud\\source\\repos\\Prac2\\Prac2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cloud\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -134,7 +134,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   },

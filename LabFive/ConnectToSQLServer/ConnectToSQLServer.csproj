@@ -63,26 +63,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddClW.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AddW.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="AddAttW.xaml.cs">
       <DependentUpon>AddAttW.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AddClW.xaml.cs">
-      <DependentUpon>AddClW.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AddW.xaml.cs">
-      <DependentUpon>AddW.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
